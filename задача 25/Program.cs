@@ -13,16 +13,21 @@ int InsertDigit(string text)
 }
 
 int num1 = InsertDigit("введите число");
-int num2 = InsertDigit("введите степень числа");
+int num2 = InsertDigit("введите степень числа (натуральную)");
 
-int result = num1;
+if (num2 >= 0)
+
+{int result = num1;
 for (int i = 1; i < num2; i++)
 {
     result *= num1;
 }
 
 
-Console.WriteLine($"=>{result}");
+Console.WriteLine($"=>{result}");}
+else 
+Console.WriteLine("вы ввели неправильную степень");
+
 
 
 
