@@ -13,35 +13,37 @@
 
 int[] CreateArrayRndInt(int size, int min, int max)
 {
-Random rnd = new Random();
-int [] array = new int [size];
-for (int i = 0; i < array.Length; i++)
-{
-    array[i]=rnd.Next(min, max+1);
-}
-return array;
+    Random rnd = new Random();
+    int[] array = new int[size];
+    for (int i = 0; i < array.Length; i++)
+    {
+        array[i] = rnd.Next(min, max + 1);
+    }
+    return array;
 }
 
-void PrintArray (int [] array1)
+void PrintArray(int[] array1)
 {
     Console.Write("[");
     for (int i = 0; i < array1.Length; i++)
-    {if (i<array1.Length-1) Console.Write($"{array1[i]}, ");
-    else Console.Write($"{array1[i]}]");   
+    {
+        if (i < array1.Length - 1) Console.Write($"{array1[i]}, ");
+        else Console.Write($"{array1[i]}]");
     }
-Console.WriteLine();
+    Console.WriteLine();
 }
 
-int CountNotEvenPossitionNum(int [] array2 )
+int CountNotEvenPossitionNum(int[] array2)
 {
     int sum = 0;
     for (int i = 0; i < array2.Length; i++)
-    {if (i%2==0) sum+=array2[i]; 
-        } 
+    {
+        if (i % 2 == 0) sum += array2[i];
+    }
     return sum;
-} 
+}
 
-int [] arr = CreateArrayRndInt(5,0,9);
+int[] arr = CreateArrayRndInt(5, 0, 9);
 PrintArray(arr);
 Console.WriteLine($"сумма чисел, cтоящих на нечетных позициях в массиве = {CountNotEvenPossitionNum(arr)}");
 
