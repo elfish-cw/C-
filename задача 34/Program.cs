@@ -13,11 +13,8 @@ int InsertDigit(string text)
     return number;
 }
 
-int[] CreateArray ()
+int[] CreateArrayRndInt(int size, int min, int max)
 {
-int min = InsertDigit("введите минимальное значение массива");
-int max = InsertDigit("введите максимальное значение массива");
-int size = InsertDigit("введите размер массива");
 Random rnd = new Random();
 int [] array = new int [size];
 for (int i = 0; i < array.Length; i++)
@@ -37,8 +34,17 @@ void PrintArray (int [] array1)
 Console.WriteLine();
 }
 
+int CountEvenNum(int [] array2 )
+{
+    int sum = 0;
+    for (int i = 0; i < array2.Length; i++)
+    {if (array2[i]%2==0) sum++; 
+        } 
+    return sum;
+} 
 
-int [] arr = CreateArray();
+int [] arr = CreateArrayRndInt(6,99,999);
 PrintArray(arr);
+Console.WriteLine($"количество четных чисел в массиве = {CountEvenNum(arr)}");
 
 
