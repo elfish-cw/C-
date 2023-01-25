@@ -6,12 +6,12 @@
 // [345, 897, 568, 234] -> 2
 
 
-int InsertDigit(string text)
-{
-    Console.WriteLine(text);
-    int number = Convert.ToInt32(Console.ReadLine());
-    return number;
-}
+// int InsertDigit(string text)
+// {
+//     Console.WriteLine(text);
+//     int number = Convert.ToInt32(Console.ReadLine());
+//     return number;
+// }
 
 int[] CreateArrayRndInt(int size, int min, int max)
 {
