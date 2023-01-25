@@ -1,4 +1,8 @@
-﻿nt[] CreateArrayRndInt(int size, int min, int max)
+﻿// Задача 45. Напишите программу,
+// которая будет создавать копии массива
+// с помощью поэлементного копирования.
+
+int[] CreateArrayRndInt(int size, int min, int max)
 {
     int[] array = new int[size];
     Random rnd = new Random();
@@ -22,9 +26,10 @@ void PrintArray(int[] array)
 }
 
 int[] CopyArray(int[] array)
+
 {
     int[] newArray = new int[array.Length];
-    for (int i = 0; i < newArray.Length; i++)
+    for (int i = 0; i < array.Length; i++)
     {
         newArray[i] = array[i];
     } 
