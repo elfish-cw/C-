@@ -54,9 +54,6 @@ int MatrixTrace(int[,] matrix)
 }
 
 
-
-
-
 // Суммирование элементов на диагонали
 // int MatrixTrace(int[,] matrix)
 // {
