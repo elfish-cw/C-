@@ -9,3 +9,53 @@
 // 8 4 2 4
 
 // 1, 7 -> такого элемента в массиве нет
+
+int InsertDigit(string text)
+{
+    Console.WriteLine(text);
+    int number = Convert.ToInt32(Console.ReadLine());
+    return number;
+}
+
+// Создание рандомного двумерного массива int
+int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
+{
+    int[,] matrix = new int[rows, columns];
+    Random rnd = new Random();
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrix.GetLength(1); j++)
+        {
+            matrix[i, j] = rnd.Next(min, max + 1);
+        }
+    }
+    return matrix;
+}
+// Печать массива int
+void PrintMatrix(int[,] matrix1)
+{
+    for (int i = 0; i < matrix1.GetLength(0); i++)
+    {
+        Console.Write("[");
+        for (int j = 0; j < matrix1.GetLength(1); j++)
+        {
+            if (j < matrix1.GetLength(1) - 1) Console.Write($"{matrix1[i, j], 5} ");
+            else Console.Write($"{matrix1[i, j], 5}");
+        }
+        Console.WriteLine("]");
+    }
+}
+
+void PrintSelectedElement (int [,] matrix2, int selectedRow, int selectedColumn)
+{
+if (selectedRow > matrix2.GetLength(0)||selectedColumn > matrix2.GetLength(1))
+Console.WriteLine("элемента по заданному индексу НЕТ");
+else Console.WriteLine(matrix2[selectedRow-1, selectedColumn-1]);
+}
+
+int[,] mtrx = CreateMatrixRndInt(3, 4, 1, 50);
+PrintMatrix(mtrx);
+int selectedRow1 = InsertDigit("введите строку");
+int selectedColumn1 = InsertDigit("введите ряд");
+PrintSelectedElement(mtrx, selectedRow1, selectedColumn1);
+
