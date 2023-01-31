@@ -1,8 +1,6 @@
-﻿// Задача 53. Задайте двумерный массив.
-// Напишите программу, которая поменет местами 
-// первую и последнюю строку.
-
-// Создание рандомного двумерного массива int
+﻿// Задача 55. Задайте двумернй массив 
+// Напишите программу, 
+// которая заменяет строки на столбцы, если это возможно.
 
 int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
 {
@@ -36,28 +34,27 @@ void PrintMatrix(int[,] matrix1)
     }
 }
 
-void ReplaceFirstLastRows (int[,] matrix2)
+void ReplaceRowsToColumns (int[,] matrix2)
 {
-    for (int j = 0; j < matrix2.GetLength(1); j++)
+    
+    for (int j = 1; j < matrix2.GetLength(1); j++)
+
     {
-        int temp = matrix2[0,j];
-        matrix2[0,j] = matrix2[matrix2.GetLength(0)-1,j];
-        matrix2[matrix2.GetLength(0)-1,j] = temp;
+        for (int i = 1; i < matrix2.GetLength(0); i++)
+        {
+        int temp = matrix2[i-1,j];
+        matrix2[i-1,j] = matrix2[i,j-1];
+        matrix2[i,j-1] = temp;
+    }
     }
 }
-void ReplaceFirstLastRows(int[,] matrix2)
-{
-    for (int j = 1; j < matrix2.GetLength(1); j++)
-    {
-        int temp = matrix2[0,j];
-        matrix2[0,j] = matrix2[matrix2.GetLength(0)-1,j];
-        matrix2[matrix2.GetLength(0)-1,j] = temp;
-    }
-    }
-
 
 int [,] mtrx = CreateMatrixRndInt (3,3,0,10);
 PrintMatrix(mtrx);
-ReplaceFirstLastRows(mtrx);
+if (mtrx.GetLength(0)==mtrx.GetLength(1))
+{
+ReplaceRowsToColumns(mtrx);
 Console.WriteLine();
-PrintMatrix(mtrx);
+PrintMatrix(mtrx);}
+
+else Console.WriteLine ("невозможно");

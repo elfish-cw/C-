@@ -7,6 +7,7 @@
 // 5 9 2 3      5 9  2 3
 // 8 4 2 4     64 4  4 4 
 
+
 int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
 {
     int[,] matrix = new int[rows, columns];
