@@ -21,12 +21,13 @@ void NaturalNumber(int numN)
     {
         Console.Write($"{numN} ");
         NaturalNumber(numN - 1);
+        
     }
 
     else
     {
-        Console.Write($"{numN} ");
         NaturalNumber(numN + 1);
+        Console.Write($"{numN} ");
     }
 }
 
