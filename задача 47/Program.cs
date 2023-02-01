@@ -25,14 +25,16 @@ double[,] CreateMatrixRndDouble(int rows, int columns, int min, int max)
             int minus = rnd2.Next(-1,2);
             if (minus == 0) 
             {minus = minus+1;
+            matrix[i, j] = Math.Round(rnd.NextDouble()*(max-min)*minus,1);}
+            else
             matrix[i, j] = Math.Round(rnd.NextDouble()*(max-min)*minus,1);
-            }
-            matrix[i, j] = Math.Round(rnd.NextDouble()*(max-min)*minus,1);
+            // matrix[i, j] = Math.Round(rnd.NextDouble()*(max-min),1);
             
         }
     }
     return matrix;
 }
+
 
 
 // Печать массива int
