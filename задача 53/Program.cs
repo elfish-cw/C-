@@ -45,15 +45,7 @@ void ReplaceFirstLastRows (int[,] matrix2)
         matrix2[matrix2.GetLength(0)-1,j] = temp;
     }
 }
-void ReplaceFirstLastRows(int[,] matrix2)
-{
-    for (int j = 1; j < matrix2.GetLength(1); j++)
-    {
-        int temp = matrix2[0,j];
-        matrix2[0,j] = matrix2[matrix2.GetLength(0)-1,j];
-        matrix2[matrix2.GetLength(0)-1,j] = temp;
-    }
-    }
+
 
 
 int [,] mtrx = CreateMatrixRndInt (3,3,0,10);
