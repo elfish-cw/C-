@@ -15,7 +15,7 @@ int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
     }
     return matrix;
 
-    
+
 }
 
 
@@ -24,7 +24,6 @@ void PrintMatrix(int[,] matrix1)
 {
     for (int i = 0; i < matrix1.GetLength(0); i++)
     {
-
         for (int j = 0; j < matrix1.GetLength(1); j++)
         {
             if (j < matrix1.GetLength(1) - 1) Console.Write($"{matrix1[i, j],5} ");
@@ -34,27 +33,26 @@ void PrintMatrix(int[,] matrix1)
     }
 }
 
-void ReplaceRowsToColumns (int[,] matrix2)
+void ReplaceRowsToColumns(int[,] matrix2)
 {
-    
     for (int j = 1; j < matrix2.GetLength(1); j++)
-
     {
         for (int i = 1; i < matrix2.GetLength(0); i++)
         {
-        int temp = matrix2[i-1,j];
-        matrix2[i-1,j] = matrix2[i,j-1];
-        matrix2[i,j-1] = temp;
-    }
+            int temp = matrix2[i - 1, j];
+            matrix2[i - 1, j] = matrix2[i, j - 1];
+            matrix2[i, j - 1] = temp;
+        }
     }
 }
 
-int [,] mtrx = CreateMatrixRndInt (3,3,0,10);
+int[,] mtrx = CreateMatrixRndInt(3, 3, 0, 10);
 PrintMatrix(mtrx);
-if (mtrx.GetLength(0)==mtrx.GetLength(1))
+if (mtrx.GetLength(0) == mtrx.GetLength(1))
 {
-ReplaceRowsToColumns(mtrx);
-Console.WriteLine();
-PrintMatrix(mtrx);}
+    ReplaceRowsToColumns(mtrx);
+    Console.WriteLine();
+    PrintMatrix(mtrx);
+}
 
-else Console.WriteLine ("невозможно");
+else Console.WriteLine("невозможно");
