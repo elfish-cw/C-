@@ -46,6 +46,34 @@ PrintArray(arr);
 int result = CountPossitiveDigits (arr);
 Console.WriteLine($"количество элементов массива больше 0 = {result}");
 
-// string str = "3,5,6,5,8,-4";
-// string[] strArr = str.Split(',');
 
+
+
+
+// void PrintArray(int[] arr)
+// {
+//     Console.Write("[");
+//     for (int i = 0; i < arr.Length; i++)
+//     {
+//         if (i < arr.Length - 1) Console.Write(arr[i] + ", ");
+//         else Console.Write($"{arr[i]}]");
+
+//     }
+//     Console.WriteLine();
+// }
+
+// int CountPossitiveDigits (int[] array2)
+// {int sum = 0;
+// for (int i = 0; i < array2.Length; i++)
+// {
+//     sum = array2[i]> 0 ? sum+1: sum;
+// }
+// return sum;
+// }
+
+// string str = "3,5,6,-5,8,-4";
+// string[] strArr = str.Split(',');
+// int[] sArr = Array.ConvertAll(strArr, s => int.Parse(s));
+// PrintArray(sArr);
+// int result = CountPossitiveDigits (sArr);
+// Console.WriteLine($"количество элементов массива больше 0 = {result}");

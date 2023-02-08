@@ -15,13 +15,14 @@ int NumberInput(string text) // Method fot Number input
     return numberinput;
 }
 
-double [] Intersection(double numB1, double numK1, double numB2, double numK2)
-{
-    double [] array = new double [2];
-    array [0] = (numB2-numB1)/(numK1-numK2);
-    array [1] = (numK1*numB2 - numB1*numK2)/(numK1 - numK2);
-    return array; 
-}
+// через массив
+// double [] Intersection(double numB1, double numK1, double numB2, double numK2)
+// {
+//     double [] array = new double [2];
+//     array [0] = (numB2-numB1)/(numK1-numK2);
+//     array [1] = (numK1*numB2 - numB1*numK2)/(numK1 - numK2);
+//     return array; 
+// }
 
 
 // void PrintArray(double[] array1)
@@ -35,10 +36,26 @@ double [] Intersection(double numB1, double numK1, double numB2, double numK2)
 //     Console.WriteLine();}
 
 
+// double numberB1 = NumberInput("Please, input your number b1");
+// double numberK1 = NumberInput("Please, input your number k1");
+// double numberB2 = NumberInput("Please, input your number b2");
+// double numberK2 = NumberInput("Please, input your number k1");
+// double [] arr = Intersection(numberB1,numberK1,numberB2,numberK2);
+// Console.WriteLine ($"( {arr [0]}, {arr [1]} )");
+// PrintArray(Intersection(numberB1,numberK1,numberB2,numberK2));
+
+
+// через кортеж
+(double, double) Intersection(double numB1, double numK1, double numB2, double numK2)
+{
+    double x = (numB2-numB1)/(numK1-numK2);
+    double y = (numK1*numB2 - numB1*numK2)/(numK1 - numK2);
+    (double, double)  result = (x, y);
+    return result; 
+}
+
 double numberB1 = NumberInput("Please, input your number b1");
 double numberK1 = NumberInput("Please, input your number k1");
 double numberB2 = NumberInput("Please, input your number b2");
 double numberK2 = NumberInput("Please, input your number k1");
-double [] arr = Intersection(numberB1,numberK1,numberB2,numberK2);
-Console.WriteLine ($"( {arr [0]}, {arr [1]} )");
-// PrintArray(Intersection(numberB1,numberK1,numberB2,numberK2));
+Console.WriteLine (Intersection(numberB1,numberK1,numberB2,numberK2));
