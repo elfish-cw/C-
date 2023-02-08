@@ -79,7 +79,7 @@ void CountNumbers(int[] array1)
     Array.Sort(array1);
     int temp = array1[0];
     int count = 1;
-    
+
     for (int i = 1; i < array1.Length; i++)
     {
         if (array1[i] == temp)
@@ -89,13 +89,13 @@ void CountNumbers(int[] array1)
         }
         else
         {
-            Console.WriteLine($"2число {temp} встречается в матрице {count} раз");
+            Console.WriteLine($"число {temp} встречается в матрице {count} раз");
             temp = array1[i];
             count = 1;
         }
         
     }
-Console.WriteLine($"3число {temp} встречается в матрице {count} раз");    
+Console.WriteLine($"число {temp} встречается в матрице {count} раз");    
 }
 
 
