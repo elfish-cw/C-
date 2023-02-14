@@ -32,34 +32,45 @@ void PrintMatrix(int[,] matrix)
         Console.Write("[");
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            if (j < matrix.GetLength(1) - 1) Console.Write($"{matrix[i, j], 5},");
-            else Console.Write($"{matrix[i, j], 5}  ");
+            if (j < matrix.GetLength(1) - 1) Console.Write($"{matrix[i, j],5},");
+            else Console.Write($"{matrix[i, j],5}  ");
         }
         Console.WriteLine("]");
     }
 }
 
-int [,] SortNumbersInRows(int [,] matrix1)
+  
+
+int[,] SortNumbersInRows(int[,] matrix1)
 {
-    int [,] resultMatrix = new int [matrix1.GetLength(0), matrix1.GetLength(1)];
-    for (int i = 0; i < matrix1.GetLength(0)-1; i++)
+    for (int i = 0; i < matrix1.GetLength(0); i++)
     {
-        
-        for (int j = 0; j < matrix1.GetLength(1)-1; j++)
+        int temp = 0;
+      
+        for (int j = 0; j < matrix1.GetLength(1); j++)
         {
-            if (matrix1[i,j] < matrix1[i,j+1])
-            {int temp =matrix1[i,j];
-            matrix1[i,j] = matrix1[i,j+1];
-            matrix1[i,j+1] = temp;
+                for (int k = j+1; k < matrix1.GetLength(1); k++)
+                {
+                    if (matrix1[i, j] < matrix1[i, k])
+                    {
+                        temp = matrix1[i, j];
+                        matrix1[i, j] = matrix1[i, k];
+                        matrix1[i, k] = temp;
+                    }
+                }
+                
             }
 
         }
+        return matrix1;
     }
-    return matrix1;
-}
 
-int [,] matr = CreateMatrixRndInt(3, 4, 1, 10);
-PrintMatrix(matr);
-SortNumbersInRows(matr);
-Console.WriteLine();
-PrintMatrix(matr);
+
+
+    int[,] matr = CreateMatrixRndInt(3, 6, 1, 10);
+    PrintMatrix(matr);
+    SortNumbersInRows(matr);
+    Console.WriteLine();
+    PrintMatrix(matr);
+
+
