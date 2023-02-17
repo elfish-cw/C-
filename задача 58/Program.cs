@@ -47,8 +47,8 @@ int[,] MultiplyTwoMatrix(int[,] matrix1, int[,] matrix2)
         {
             for (int k = 0; k < matrix2.GetLength(1); k++)
             {
-            resultMatrix[n, m] += matrix1[n, k] * matrix2[k, m];
-        }
+                resultMatrix[n, m] += matrix1[n, k] * matrix2[k, m];
+            }
         }
     }
     // }
